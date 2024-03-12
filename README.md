@@ -96,32 +96,169 @@ Como mencionado, utilizei um *dataset* público de clientes de uma rede de cafet
 
 1) Criei um ***container*** para armazenar os *blobs*:
 
+   > ![alt text](readmeFiles/images/008.png)
+
+2) Realizei o uploado dos *blobs* (arquivos .doc contendo as avaliações dos clientes):
+
+   > ![alt text](readmeFiles/images/009.png)
+   
+   Seus documentos agora estão armazenados no *container* criado:
+   
+   > ![alt text](readmeFiles/images/010.png)
+
+<br>
+
+## Indexando os documentos
+
+Depois armazenar os documentos, utilizei o serviço ***Azure IA Search*** para extrair insights deles.
+
+Para isso, utilizei o assistente existente no serviço para criar um índice e um indexador para fontes de dados com suporte. Obedeci as seguintes etapas:
+
+1) Acessei o AI Search:
+
+   > ![alt text](readmeFiles/images/011.png)
+
+2) Selecionei o serviço que foi previamente aprovisionado no início do laboratório:
+
+   > ![alt text](readmeFiles/images/012.png)
+
+3) Cliquei em ***Import data***, para iniciar o assistente de importação:
+
+   > ![alt text](readmeFiles/images/013.png)
+
+4) Realizei as seguintes configurações:
+
+   > ***Conect to your data***:   
+   > ---
+   > ![alt text](readmeFiles/images/014.png)
+   >
+   > ---
+   > 
+   > ***Atenção***: Selecionei a opção ***choose an existing connection*** para a associar o *container* onde foram armazenadas as avaliações dos clientes
+
+   ---
+
+   > ***Add coginitive skills (optional)***
+   > ---
+   > ![alt text](readmeFiles/images/015.png)
+   >
+   > ---
+   >
+   > ![alt text](readmeFiles/images/016.png)
+   >
+   > ---
+   >
+   > ![alt text](readmeFiles/images/017.png)
+   >
+   > ---
+   >
+   > ![alt text](readmeFiles/images/018.png)
+   >
+   > ---
+   >
+   > ![alt text](readmeFiles/images/019.png)
+   >
+   > ---
+   > 
+   > ***Atenção***: foi necessário criar um *conteiner* para armazenar o enriquecimento da base de conhecimento. Para isso, realizei os seguintes passos:
+   > - Logo abaixo do campo ***Storage account connection string***, cliquei em ***choose an existing connection***;
+   > - Selecionei a ***Storage Account*** aprovisionada;
+   > - Selecionei na opção para adicionar um novo *container* e o nomeei como ***knowledge-store***;
+   > - Setei o nível de privacidade como ***Private*** e cliquei em <kbd>Create</kbd>;
+   > - Selecionei o *container* criado e cliquei em <kbd>Select</kbd>;
+  
+   ---
+
+   > ***Customize target index***
+   > ---
+   > ![alt text](readmeFiles/images/020.png)
+   >
+   > ---
+   >
+   > ![alt text](readmeFiles/images/021.png)
+
+   ---
+
+   > ***Create an index***
+   > ---
+   > ![alt text](readmeFiles/images/022.png)
+
+<br>
+
+5) O indexador foi criado com sucesso:
+
+   > ![alt text](readmeFiles/images/023.png)
+
+6) Quando cliquei no indexador, após mais ou menos 1 minuto da sua criação, pude ver quando a indexação ocorreu com sucesso, bem como seu tempo de duração em em quantos documentos ela ocorreu:
+
+   > ![alt text](readmeFiles/images/024.png)
+   >
+   > ---
+   > 
+   > O que aconteceu no processo de indexação foi:
+   > - A extração dos campos de metadados do documento e o conteúdo da fonte de dados;
+   > - A execução das habilidades cognitivas para gerar campos mais enriquecidos;
+   > - O mapeamento dos campos extraídos para o índice;
+
+<br>
+
+## Consultando o Índice
+
+Com os documentos indexados, foi possível realizar pesquisas por meio *queries*. Para tanto, realizei as seguintes etapas:
+
+1) Dentro do serviço ***Azure AI Serach***, selecionei a opção ***Search explorer***:
+
+   > ![alt text](readmeFiles/images/025.png)
+
+2) O campo ***Index*** já veio com o indexador que criei marcado como default. Cliquei em ***View >>> JSON View*** para pemitir utilizar queries em formato *json*:
+
+   >![alt text](readmeFiles/images/026.png)
+
+3) Realizei a seguinte pesquisa:
+
+   ~~~Python
+   {
+      "search": "locations: 'Chicago'", # Aqui pedi para pesquisar os documento com a localidade = Chicago
+      "count": true # Aqui pedi para contar em quantos documentos o pesquisa foi encontrada
+   }
+   ~~~
+
+   Como resposta à pesquisa, foi retornado um json. No atibuto ***@odata.count***, foi indicado que a pesquisa encontrou resultado em 3 documentos. Além disso, no atributo ***@search.score***, foi atribuída uma pontuação pelo mecanismo de pesquisa para mostrar o quanto os resultados correspondem à consulta realizada. O *json* completo do resultado pode ser consultado [aqui](outputs/searchResult.json).
+
+   > ![alt text](readmeFiles/images/027.png)
+
+<br>
+
+## Revisando a base de conhecimento
+
+Quando eu executei o assistente ***Import data***, eu também criei um *container* no ***Storage Account*** para armazenar a base de conhecimento.
+
+Dentro desta base, foi possível encontra os dados enriquecidos e extraídos pelas habilidades de IA, persistidos na forma de projeções e tabelas.
+
+Veja como acessar este repositório:
+
+1) Dentro do serviço aprovisionado ***Storage Account***, cliquei no *container* ***knowledge-store***:
+
+   > ![alt text](readmeFiles/images/028.png)
+
+2) Selecionei o primeiro item (cada item é um dos arquivos .doc de avaliações que foram utilizados no laboratório):
+   
+   > ![alt text](readmeFiles/images/029.png)
+
+3) Cliquei no *json* criado para este item:
+   
+   > ![alt text](readmeFiles/images/030.png)
+
+4) Cliquei na aba ***Edit*** e consegui ver todos os metadados do arquivo de avaliação selecionado. O json completo pode ser consultado [aqui](outputs/blobDocumentExample.json):
+
+   > ![alt text](readmeFiles/images/031.png)
 
 
-![alt text](readmeFiles/images/008.png)
-![alt text](readmeFiles/images/009.png)
-![alt text](readmeFiles/images/010.png)
-![alt text](readmeFiles/images/011.png)
-![alt text](readmeFiles/images/012.png)
-![alt text](readmeFiles/images/013.png)
-![alt text](readmeFiles/images/014.png)
-![alt text](readmeFiles/images/015.png)
-![alt text](readmeFiles/images/016.png)
-![alt text](readmeFiles/images/017.png)
-![alt text](readmeFiles/images/018.png)
-![alt text](readmeFiles/images/019.png)
-![alt text](readmeFiles/images/020.png)
-![alt text](readmeFiles/images/021.png)
-![alt text](readmeFiles/images/022.png)
-![alt text](readmeFiles/images/023.png)
-![alt text](readmeFiles/images/024.png)
-![alt text](readmeFiles/images/025.png)
-![alt text](readmeFiles/images/026.png)
-![alt text](readmeFiles/images/027.png)
-![alt text](readmeFiles/images/028.png)
-![alt text](readmeFiles/images/029.png)
-![alt text](readmeFiles/images/030.png)
-![alt text](readmeFiles/images/031.png)
+
+
+
+
+
 ![alt text](readmeFiles/images/032.png)
 ![alt text](readmeFiles/images/033.png)
 ![alt text](readmeFiles/images/034.png)
