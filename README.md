@@ -47,18 +47,57 @@ Este experimento envolveu, entre outras, as seguintes etapas: extração de dado
 Para realizar este laboratório, foi necessário aprovisionar, no [Portal do Azure](https://portal.azure.com/), os 3 serviços abaixo:
 
 - ***Azure AI Search***: para gerenciará a indexação e a consulta;
-- ***Azure AI services***: para enriquecer os dados na fonte de dados com insights gerados por IA;
-- ***Storage account***: para armazenar os documentos brutos
+- ***Azure AI services***: para enriquecer os dados na fonte de dados com *insights* gerados por IA;
+- ***Storage Account***: para armazenar os documentos brutos
 
-Nota Seus recursos de Pesquisa de IA do Azure e serviços de IA do Azure devem estar no mesmo local!
+> [!NOTE]
+> Os 3 serviços precisaram ser aprovisionados no mesmo local (região), para permitir a integração entre eles
 
-![alt text](readmeFiles/gifs/001.gif)
-![alt text](readmeFiles/images/002.png)
-![alt text](readmeFiles/gifs/003.gif)
-![alt text](readmeFiles/images/004.png)
-![alt text](readmeFiles/gifs/005.gif)
-![alt text](readmeFiles/images/006.png)
-![alt text](readmeFiles/images/007.png)
+1) Primeiramente, aprovisionei o ***Azure AI Search***, na região ***(US) East US***:
+
+   > ![alt text](readmeFiles/gifs/001.gif)
+   
+   Confirmação do aprovisionamento concluído:
+   
+   > ![alt text](readmeFiles/images/002.png)
+
+<br>
+
+2) Em seguida, aprovisionei o ***Azure AI Search***, na mesma região:
+
+   > ![alt text](readmeFiles/gifs/003.gif)
+   
+   Confirmação do aprovisionamento concluído:
+   
+   > ![alt text](readmeFiles/images/004.png)
+
+<br>
+
+3) Por fim, aprovsionei o ***Storage Account*** também em na região ***(US) East US***, conforme recomendação:
+
+   > ![alt text](readmeFiles/gifs/005.gif)
+   
+   Confirmação do aprovisionamento concluído:
+   
+   > ![alt text](readmeFiles/images/006.png)
+      
+   Nota: Após aprovisionar o serviço, é necessário habilitar a opção que permite acesso anônimo ao serviço. Esta opção está dentro de ***Settings >>> Configuration***. Após selecionar a opção ***Enableb***, basta clicar no botão <kbd>Save</kbd>:
+   
+   > ![alt text](readmeFiles/images/007.png)
+
+<br>
+
+## Carregando os documentos no Azure Account
+
+Como mencionado, utilizei um *dataset* público de clientes de uma rede de cafeteria. Caso queira conhecê-lo, disponibilizei-o aqui, dentro do projeto, em [inputs/reviews](inputs/reviews).
+
+> [!Note]
+> Nos serviço ***Storage Account***, será utilizado muito o termo ***blob*** (*Binary Large Object* ou Objeto Binário Grande), que nada mais é do que um dado não estruturado. Ele não está, necessariamente, em conformidade com nenhum formato de arquivo.
+
+1) Criei um ***container*** para armazenar os *blobs*:
+
+
+
 ![alt text](readmeFiles/images/008.png)
 ![alt text](readmeFiles/images/009.png)
 ![alt text](readmeFiles/images/010.png)
