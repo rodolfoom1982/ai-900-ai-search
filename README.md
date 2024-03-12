@@ -1,8 +1,31 @@
 # AI-900: Azure Cognitive Search - Utilizando AI Search para Indexação e Consulta de Dados
 
+![Static Badge](https://img.shields.io/badge/Status_Projeto:-Concluído_(12/Mar/2024)-green)
+
+![Static Badge](https://img.shields.io/badge/Inteligência_Artificial_(IA)-blue)
+![Static Badge](https://img.shields.io/badge/IA_Data_Indexing-blue)
+![Static Badge](https://img.shields.io/badge/IA_Document_Intelligence-blue)
+![Static Badge](https://img.shields.io/badge/IA_Knowledge_Mining-blue)
+
+![Static Badge](https://img.shields.io/badge/Microsoft_Azure-orange)
+![Static Badge](https://img.shields.io/badge/Azure_Cognitive_Search-orange)
+![Static Badge](https://img.shields.io/badge/Azure_Storage_Account-orange)
+
 <br>
 
 ## Índice
+
+- [Descrição do Projeto](#Descrição-do-Projeto)
+- [Acessos necessários](#Acessos-necessários)
+- [Introdução](#Introdução)
+- [Aprovisionando os recursos necessários do Azure](#Aprovisionando-os-recursos-necessários-do-Azure)
+- [Carregando os documentos no Azure Account](#Carregando-os-documentos-no-Azure-Account)
+- [Indexando os documentos](#Indexando-os-documentos)
+- [Consultando o Índice](#Consultando-o-Índice)
+- [Revisando a base de conhecimento](#Revisando-a-base-de-conhecimento)
+- [Conclusão](#Conclusão)
+- [Limpando o ambiente](#Limpando-o-ambiente)
+- [Certificados e Certificações Associados ao Projeto](#Certificados-e-Certificações-Associados-ao-Projeto)
 
 <br>
 
@@ -288,3 +311,29 @@ Veja como acessar este repositório:
    > ***Documentos***:   
    > ---
    > ![alt text](readmeFiles/images/039.png)
+
+<br>
+
+## Conclusão
+
+O experimento realizado com o Azure Cognitive Search demonstrou a eficácia deste serviço de índice de Pesquisa de IA.
+
+Através do uso de um conjunto de habilidades de IA, foi possível processar e enriquecer dados brutos, transformando-os em informações pesquisáveis e úteis.
+
+A implementação de uma solução de mineração de conhecimento permitiu a extração de insights valiosos a partir de avaliações de clientes, evidenciando o potencial do Azure Cognitive Search como uma ferramenta poderosa para a análise de dados e a tomada de decisões baseada em dados.
+
+Além disso, a capacidade do serviço de suportar o enriquecimento incremental destaca sua eficiência em termos de custos, tornando-o uma opção viável e atraente para empresas e organizações que buscam otimizar seus processos de análise de dados.
+
+Em suma, o Azure Cognitive Search provou ser uma ferramenta de grande valia para transformar dados brutos em conhecimento acionável, abrindo novas possibilidades para a análise de dados e a inteligência de negócios.
+
+<br>
+
+## Limpando o ambiente
+
+> [!WARNING]
+> Após a conclusão do projeto, se não for reaproveitar os recursos utilizados, é aconselhável excluí-los, bem como os grupos de recursos, para que não haja cobranças indevidas na sua Azure Subscription
+
+<br>
+
+## Certificados e Certificações Associados ao Projeto
+
