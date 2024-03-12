@@ -3,9 +3,10 @@
 ![Static Badge](https://img.shields.io/badge/Status_Projeto:-Concluído_(12/Mar/2024)-green)
 
 ![Static Badge](https://img.shields.io/badge/Inteligência_Artificial_(IA)-blue)
-![Static Badge](https://img.shields.io/badge/IA_Data_Indexing-blue)
-![Static Badge](https://img.shields.io/badge/IA_Document_Intelligence-blue)
-![Static Badge](https://img.shields.io/badge/IA_Knowledge_Mining-blue)
+![Static Badge](https://img.shields.io/badge/AI_Search-blue)
+![Static Badge](https://img.shields.io/badge/AI_Data_Indexing-blue)
+![Static Badge](https://img.shields.io/badge/AI_Document_Intelligence-blue)
+![Static Badge](https://img.shields.io/badge/AI_Knowledge_Mining-blue)
 
 ![Static Badge](https://img.shields.io/badge/Microsoft_Azure-orange)
 ![Static Badge](https://img.shields.io/badge/Azure_Cognitive_Search-orange)
@@ -336,4 +337,8 @@ Em suma, o Azure Cognitive Search provou ser uma ferramenta de grande valia para
 <br>
 
 ## Certificados e Certificações Associados ao Projeto
+
+![](https://github.com/rodolfoom1982/meus-certificados/blob/main/dio-bootcamp-ai-900-azure-ai-fundamentals/inteligencia-de-documentos-de-ia-do-azure.png)
+
+![](https://github.com/rodolfoom1982/meus-certificados/blob/main/dio-bootcamp-ai-900-azure-ai-fundamentals/azure-cognitive-search-utilizando-ai-search-para-indexacao-e-consulta-de-dados.png)
 
