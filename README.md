@@ -223,7 +223,7 @@ Com os documentos indexados, foi possível realizar pesquisas por meio *queries*
    }
    ~~~
 
-   Como resposta à pesquisa, foi retornado um json. No atibuto ***@odata.count***, foi indicado que a pesquisa encontrou resultado em 3 documentos. Além disso, no atributo ***@search.score***, foi atribuída uma pontuação pelo mecanismo de pesquisa para mostrar o quanto os resultados correspondem à consulta realizada. O *json* completo do resultado pode ser consultado [aqui](outputs/searchResult.json).
+   Como resposta à pesquisa, foi retornado um *json*. No atibuto ***@odata.count***, foi indicado que a pesquisa encontrou resultado em 3 documentos. Além disso, no atributo ***@search.score***, foi atribuída uma pontuação pelo mecanismo de pesquisa para mostrar o quanto os resultados correspondem à consulta realizada. O *json* completo do resultado pode ser consultado [aqui](outputs/searchResult.json).
 
    > ![alt text](readmeFiles/images/027.png)
 
@@ -249,21 +249,42 @@ Veja como acessar este repositório:
    
    > ![alt text](readmeFiles/images/030.png)
 
-4) Cliquei na aba ***Edit*** e consegui ver todos os metadados do arquivo de avaliação selecionado. O json completo pode ser consultado [aqui](outputs/blobDocumentExample.json):
+4) Cliquei na aba ***Edit*** e consegui ver todos os metadados do arquivo de avaliação selecionado. O *json* completo pode ser consultado [aqui](outputs/blobDocumentExample.json):
 
    > ![alt text](readmeFiles/images/031.png)
 
+5) Explorando um pouco mais, conseguir visualizar imagens armazenadas dentro dos documentos, indexadas dentro do *container* ***coffee-skillset-imagem-projection***:
 
+   > ![alt text](readmeFiles/images/032.png)
+   >
+   > ---
+   > 
+   > ![alt text](readmeFiles/images/033.png)
+   >
+   > ---
+   > 
+   > ![alt text](readmeFiles/images/034.png)
+   >
+   > ---
+   > 
+   > ![alt text](readmeFiles/images/035.png)
 
+6) Por fim, consegui visualizar as entidadas que foram indexadas nos documento, utilizando a *feature* ***Tables***, disponível dentro de ***Storage Browser***:
 
-
-
-
-![alt text](readmeFiles/images/032.png)
-![alt text](readmeFiles/images/033.png)
-![alt text](readmeFiles/images/034.png)
-![alt text](readmeFiles/images/035.png)
-![alt text](readmeFiles/images/036.png)
-![alt text](readmeFiles/images/037.png)
-![alt text](readmeFiles/images/038.png)
-![alt text](readmeFiles/images/039.png)
+   > ![alt text](readmeFiles/images/036.png)
+    
+   > Cada entidade está possui sua própria tabela. Muitos dos campos são chaves, portanto, é possível vincular as tabelas como um banco de dados relacional. A sequir, alguns exemplos de entidades:
+   
+   > ***Frases-chave:***:   
+   > ---
+   > ![alt text](readmeFiles/images/037.png)
+   >
+   > ---
+   > ***Imagens***:   
+   > ---
+   > ![alt text](readmeFiles/images/038.png)
+   >
+   > ---
+   > ***Documentos***:   
+   > ---
+   > ![alt text](readmeFiles/images/039.png)
