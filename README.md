@@ -79,35 +79,35 @@ Para realizar este laboratório, foi necessário aprovisionar, no [Portal do Azu
 
 1) Primeiramente, aprovisionei o ***Azure AI Search***, na região ***(US) East US***:
 
-   > ![alt text](readmeFiles/gifs/001.gif)
+   > ![](readmeFiles/gifs/001.gif)
    
    Confirmação do aprovisionamento concluído:
    
-   > ![alt text](readmeFiles/images/002.png)
+   > ![](readmeFiles/images/002.png)
 
 <br>
 
 2) Em seguida, aprovisionei o ***Azure AI Search***, na mesma região:
 
-   > ![alt text](readmeFiles/gifs/003.gif)
+   > ![](readmeFiles/gifs/003.gif)
    
    Confirmação do aprovisionamento concluído:
    
-   > ![alt text](readmeFiles/images/004.png)
+   > ![](readmeFiles/images/004.png)
 
 <br>
 
 3) Por fim, aprovsionei o ***Storage Account*** também em na região ***(US) East US***, conforme recomendação:
 
-   > ![alt text](readmeFiles/gifs/005.gif)
+   > ![](readmeFiles/gifs/005.gif)
    
    Confirmação do aprovisionamento concluído:
    
-   > ![alt text](readmeFiles/images/006.png)
+   > ![](readmeFiles/images/006.png)
       
    Nota: Após aprovisionar o serviço, é necessário habilitar a opção que permite acesso anônimo ao serviço. Esta opção está dentro de ***Settings >>> Configuration***. Após selecionar a opção ***Enableb***, basta clicar no botão <kbd>Save</kbd>:
    
-   > ![alt text](readmeFiles/images/007.png)
+   > ![](readmeFiles/images/007.png)
 
 <br>
 
@@ -120,15 +120,15 @@ Como mencionado, utilizei um *dataset* público de clientes de uma rede de cafet
 
 1) Criei um ***container*** para armazenar os *blobs*:
 
-   > ![alt text](readmeFiles/images/008.png)
+   > ![](readmeFiles/images/008.png)
 
 2) Realizei o uploado dos *blobs* (arquivos .doc contendo as avaliações dos clientes):
 
-   > ![alt text](readmeFiles/images/009.png)
+   > ![](readmeFiles/images/009.png)
    
    Seus documentos agora estão armazenados no *container* criado:
    
-   > ![alt text](readmeFiles/images/010.png)
+   > ![](readmeFiles/images/010.png)
 
 <br>
 
@@ -140,21 +140,21 @@ Para isso, utilizei o assistente existente no serviço para criar um índice e u
 
 1) Acessei o AI Search:
 
-   > ![alt text](readmeFiles/images/011.png)
+   > ![](readmeFiles/images/011.png)
 
 2) Selecionei o serviço que foi previamente aprovisionado no início do laboratório:
 
-   > ![alt text](readmeFiles/images/012.png)
+   > ![](readmeFiles/images/012.png)
 
 3) Cliquei em ***Import data***, para iniciar o assistente de importação:
 
-   > ![alt text](readmeFiles/images/013.png)
+   > ![](readmeFiles/images/013.png)
 
 4) Realizei as seguintes configurações:
 
    > ***Conect to your data***:   
    > ---
-   > ![alt text](readmeFiles/images/014.png)
+   > ![](readmeFiles/images/014.png)
    >
    > ---
    > 
@@ -164,23 +164,23 @@ Para isso, utilizei o assistente existente no serviço para criar um índice e u
 
    > ***Add coginitive skills (optional)***
    > ---
-   > ![alt text](readmeFiles/images/015.png)
+   > ![](readmeFiles/images/015.png)
    >
    > ---
    >
-   > ![alt text](readmeFiles/images/016.png)
+   > ![](readmeFiles/images/016.png)
    >
    > ---
    >
-   > ![alt text](readmeFiles/images/017.png)
+   > ![](readmeFiles/images/017.png)
    >
    > ---
    >
-   > ![alt text](readmeFiles/images/018.png)
+   > ![](readmeFiles/images/018.png)
    >
    > ---
    >
-   > ![alt text](readmeFiles/images/019.png)
+   > ![](readmeFiles/images/019.png)
    >
    > ---
    > 
@@ -195,27 +195,27 @@ Para isso, utilizei o assistente existente no serviço para criar um índice e u
 
    > ***Customize target index***
    > ---
-   > ![alt text](readmeFiles/images/020.png)
+   > ![](readmeFiles/images/020.png)
    >
    > ---
    >
-   > ![alt text](readmeFiles/images/021.png)
+   > ![](readmeFiles/images/021.png)
 
    ---
 
    > ***Create an index***
    > ---
-   > ![alt text](readmeFiles/images/022.png)
+   > ![](readmeFiles/images/022.png)
 
 <br>
 
 5) O indexador foi criado com sucesso:
 
-   > ![alt text](readmeFiles/images/023.png)
+   > ![](readmeFiles/images/023.png)
 
 6) Quando cliquei no indexador, após mais ou menos 1 minuto da sua criação, pude ver quando a indexação ocorreu com sucesso, bem como seu tempo de duração em em quantos documentos ela ocorreu:
 
-   > ![alt text](readmeFiles/images/024.png)
+   > ![](readmeFiles/images/024.png)
    >
    > ---
    > 
@@ -232,11 +232,11 @@ Com os documentos indexados, foi possível realizar pesquisas por meio *queries*
 
 1) Dentro do serviço ***Azure AI Serach***, selecionei a opção ***Search explorer***:
 
-   > ![alt text](readmeFiles/images/025.png)
+   > ![](readmeFiles/images/025.png)
 
 2) O campo ***Index*** já veio com o indexador que criei marcado como default. Cliquei em ***View >>> JSON View*** para pemitir utilizar queries em formato *json*:
 
-   >![alt text](readmeFiles/images/026.png)
+   >![](readmeFiles/images/026.png)
 
 3) Realizei a seguinte pesquisa:
 
@@ -249,7 +249,7 @@ Com os documentos indexados, foi possível realizar pesquisas por meio *queries*
 
    Como resposta à pesquisa, foi retornado um *json*. No atibuto ***@odata.count***, foi indicado que a pesquisa encontrou resultado em 3 documentos. Além disso, no atributo ***@search.score***, foi atribuída uma pontuação pelo mecanismo de pesquisa para mostrar o quanto os resultados correspondem à consulta realizada. O *json* completo do resultado pode ser consultado [aqui](outputs/searchResult.json).
 
-   > ![alt text](readmeFiles/images/027.png)
+   > ![](readmeFiles/images/027.png)
 
 <br>
 
@@ -263,55 +263,55 @@ Veja como acessar este repositório:
 
 1) Dentro do serviço aprovisionado ***Storage Account***, cliquei no *container* ***knowledge-store***:
 
-   > ![alt text](readmeFiles/images/028.png)
+   > ![](readmeFiles/images/028.png)
 
 2) Selecionei o primeiro item (cada item é um dos arquivos .doc de avaliações que foram utilizados no laboratório):
    
-   > ![alt text](readmeFiles/images/029.png)
+   > ![](readmeFiles/images/029.png)
 
 3) Cliquei no *json* criado para este item:
    
-   > ![alt text](readmeFiles/images/030.png)
+   > ![](readmeFiles/images/030.png)
 
 4) Cliquei na aba ***Edit*** e consegui ver todos os metadados do arquivo de avaliação selecionado. O *json* completo pode ser consultado [aqui](outputs/blobDocumentExample.json):
 
-   > ![alt text](readmeFiles/images/031.png)
+   > ![](readmeFiles/images/031.png)
 
 5) Explorando um pouco mais, conseguir visualizar imagens armazenadas dentro dos documentos, indexadas dentro do *container* ***coffee-skillset-imagem-projection***:
 
-   > ![alt text](readmeFiles/images/032.png)
+   > ![](readmeFiles/images/032.png)
    >
    > ---
    > 
-   > ![alt text](readmeFiles/images/033.png)
+   > ![](readmeFiles/images/033.png)
    >
    > ---
    > 
-   > ![alt text](readmeFiles/images/034.png)
+   > ![](readmeFiles/images/034.png)
    >
    > ---
    > 
-   > ![alt text](readmeFiles/images/035.png)
+   > ![](readmeFiles/images/035.png)
 
 6) Por fim, consegui visualizar as entidadas que foram indexadas nos documento, utilizando a *feature* ***Tables***, disponível dentro de ***Storage Browser***:
 
-   > ![alt text](readmeFiles/images/036.png)
+   > ![](readmeFiles/images/036.png)
     
    > Cada entidade está possui sua própria tabela. Muitos dos campos são chaves, portanto, é possível vincular as tabelas como um banco de dados relacional. A sequir, alguns exemplos de entidades:
    
    > ***Frases-chave:***:   
    > ---
-   > ![alt text](readmeFiles/images/037.png)
+   > ![](readmeFiles/images/037.png)
    >
    > ---
    > ***Imagens***:   
    > ---
-   > ![alt text](readmeFiles/images/038.png)
+   > ![](readmeFiles/images/038.png)
    >
    > ---
    > ***Documentos***:   
    > ---
-   > ![alt text](readmeFiles/images/039.png)
+   > ![](readmeFiles/images/039.png)
 
 <br>
 
@@ -341,4 +341,6 @@ Em suma, o Azure Cognitive Search provou ser uma ferramenta de grande valia para
 ![](https://github.com/rodolfoom1982/meus-certificados/blob/main/dio-bootcamp-ai-900-azure-ai-fundamentals/inteligencia-de-documentos-de-ia-do-azure.png)
 
 ![](https://github.com/rodolfoom1982/meus-certificados/blob/main/dio-bootcamp-ai-900-azure-ai-fundamentals/azure-cognitive-search-utilizando-ai-search-para-indexacao-e-consulta-de-dados.png)
+
+![](https://github.com/rodolfoom1982/meus-certificados/blob/main/dio-bootcamp-ai-900-azure-ai-fundamentals/microsoft-azure-ai-fundamentals.png)
 
